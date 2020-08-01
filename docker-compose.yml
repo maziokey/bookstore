@@ -6,14 +6,19 @@ services:
         environment: 
             - SECRET_KEY=%(koyq_@405u(2%zf5r(#ax6f^b9#n=@s*0+v%k@!c=@_@71hy
             - DEBUG=1
+            - POSTGRES_PASSWORD=postgres
         volumes:
             - .:/code
         ports:
             - 8000:8000
         depends_on:
             - db
+        links:
+            - db:db
     db:
         image: postgres:11
+        environment:
+            - POSTGRES_PASSWORD=postgres
         volumes:
             - postgres_data:/var/lib/postgresql/data/
 volumes: 
