@@ -14,6 +14,9 @@ pillow = "==6.2.1"
 django-allauth = "==0.41.0"
 stripe = "*"
 django-debug-toolbar = "*"
+whitenoise = "==4.1.4"
+gunicorn = "==20.0.4"
+dj-database-url = "==0.5.0"
 
 [requires]
 python_version = "3.7"
